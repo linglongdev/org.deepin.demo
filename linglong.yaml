@@ -1,0 +1,26 @@
+version: "1"
+
+package:
+  id: org.deepin.demo
+  name: deepin-demo
+  version: 0.0.0.1
+  kind: app
+  description: |
+    Simple qt demo 
+
+command:
+  - /opt/apps/org.deepin.demo/files/bin/demo
+
+base: org.deepin.base/23.1.0
+runtime: org.deepin.runtime.dtk/23.1.0
+
+sources:
+  - kind: git
+    url: https://github.com/linuxdeepin/linglong-builder-demo.git 
+    version: master
+    commit: e9e83f0d917a732987c890dbb750f2497986fa1c
+
+build: |
+  qmake linglong/source/linglong-builder-demo.git
+  make
+  make install
