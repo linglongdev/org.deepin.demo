@@ -21,6 +21,6 @@ sources:
     commit: e9e83f0d917a732987c890dbb750f2497986fa1c
 
 build: |
-  qmake linglong/source/linglong-builder-demo.git
+  qmake linglong/sources/linglong-builder-demo.git
   make
   make install
